@@ -1,0 +1,96 @@
+<style>
+  .demo{
+    color: red;
+    background: #ffffff;
+    width: 200px;
+    height: 200px;
+    display: block;
+  }
+</style>
+
+  // .item{
+  //   width: 100%;
+  //   height: 240px;
+  //   background: pink;
+  //   border: 1rpx solid #ccc;
+  //   box-sizing: border-box;
+  //   border-radius: 11rpx;
+  //   margin-bottom: 32rpx;
+  //   padding: 0 32rpx;
+  //   box-sizing: border-box;
+  // }
+  // .itemId{
+  //   width: 100%;
+  //   height: 68rpx;
+  //   line-height: 68rpx;
+  //   border-bottom: 1rpx solid #ccc;
+  //   box-sizing: border-box;
+  // }
+  // .idLeft{
+  //   display: inline-block;
+  // }
+  // .idRight{
+  //   display: inline-block;
+  // }
+
+  // .itemStatus{
+  //   border-bottom: 1px solid #cccccc;
+  // }
+
+<template>
+  <view class="demo">
+    <view class="demo-container">
+      <view class="wenzi">{{item.id}}</view>
+      <view class="wenzi">{{item.number}}</view>
+      <view class="wenzi">{{item.name}}</view>
+      <view class="wenzi">{{item.status}}</view>
+      <view class="wenzi">{{statusStr(item.status)}}</view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Item extends wepy.component {
+  props = {
+    item: {}
+  }
+
+  data = {
+    //
+  }
+
+  onLoad() {
+    //
+  }
+
+  computed = {
+    statusStr(status) {
+      console.log(status)
+      let statusStr = ''
+      switch (status) {
+        case 0 :
+          statusStr = '已取消'
+          break;
+        case 1 :
+          statusStr = '待支付'
+          break;
+        case 2 :
+          statusStr = '带推演'
+          break;
+        case 3 :
+          statusStr = '已完成'
+          break;
+        }
+      return statusStr
+    }
+  }
+
+  methods = {
+    //
+  }
+  
+}
+
+</script>
+

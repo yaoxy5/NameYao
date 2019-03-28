@@ -1,0 +1,47 @@
+<style>
+
+</style>
+<template>
+
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '塔罗牌Demo'
+    }
+    
+    data = {
+      groupList: [
+        {
+          id: 1,
+          number: 19020200001,
+          name: '点击改变',
+          status: 0  // 0: 已取消；1: 待支付；2: 带推演；3: 已完成；
+        },
+        {
+          id: 2,
+          number: 19020200002,
+          name: '点击改变',
+          status: 1
+        },
+        {
+          id: 3,
+          number: 19020200003,
+          name: '点击改变',
+          status: 3
+        }
+      ]
+    }
+
+    methods = {
+        
+    }
+
+    onLoad() {
+      
+    }
+  }
+</script>
